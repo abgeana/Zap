@@ -305,6 +305,11 @@ ul.nav a:hover {
 /* Index
 /* ---------------------------------------------------------- */
 
+.gh-postfeed {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 .gh-postfeed .post {
     display: block;
     padding: 1vmin 0;
