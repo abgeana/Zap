@@ -255,7 +255,7 @@ a.gh-powered svg {
 }
 
 
-/* Main 
+/* Main
 /* ---------------------------------------------------------- */
 
 .gh-container {
@@ -397,20 +397,20 @@ ul.nav a:hover {
     display: grid;
     grid-template-columns:
         [full-start]
-          minmax(calc(calc(100% - 800px) / 2), 1fr)
+          minmax(calc(calc(100% - 1000px) / 2), 1fr)
             [wide-start]
                 auto
                     [main-start]
-                        600px
+                        1000px
                     [main-end]
                 auto
             [wide-end]
-          minmax(calc(calc(100% - 800px) / 2), 1fr)
+          minmax(calc(calc(100% - 1000px) / 2), 1fr)
         [full-end]
     ;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .gh-content {
         grid-template-columns:
             [full-start]
