@@ -400,33 +400,43 @@ ul.nav a:hover {
 
 .gh-content {
     display: grid;
+    /* grid lines are called
+     *      full-start, wide-start, main-start
+     *      main-end, wide-end, full-end
+     * which results in the following columns
+     *      full-start      wide-start       main-start      main-end        wide-end       full-end
+     *          |      1fr      |      350px     |     800px    |      350px     |      1fr     |
+     *  the idea is that the main content between the main-start and main-end lines takes 800px
+     *  the 2nd and 4th columns are 350px each; the 2nd column for example is used for the table of contents
+     *  the 1st and last columns are whatever is left (i.e. 1 fraction each)
+     */
     grid-template-columns:
         [full-start]
-          minmax(calc(calc(100% - 1000px) / 2), 1fr)
-            [wide-start]
-                auto
-                    [main-start]
-                        1000px
-                    [main-end]
-                auto
-            [wide-end]
-          minmax(calc(calc(100% - 1000px) / 2), 1fr)
+        1fr
+        [wide-start]
+        350px
+        [main-start]
+        800px
+        [main-end]
+        350px
+        [wide-end]
+        1fr
         [full-end]
     ;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1500px) { /* grid-template-columns for when the browser window is <= 1500px */
     .gh-content {
         grid-template-columns:
             [full-start]
             4vmin
-                [wide-start]
-                    0
-                        [main-start]
-                            auto
-                        [main-end]
-                    0
-                [wide-end]
+            [wide-start]
+            0
+            [main-start]
+            auto
+            [main-end]
+            0
+            [wide-end]
             4vmin
             [full-end]
         ;

@@ -11,7 +11,7 @@
   list-style: none;
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1500px) { /* grid-template-columns for when the browser window is >= 1500px */
   .gh-sidebar {
     position: absolute;
     top: 0;
